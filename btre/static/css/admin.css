@@ -1,0 +1,52 @@
+#header {
+  height: 50px;
+  background: #10284e;
+  color: #fff;
+}
+
+#branding h1 {
+  color: #fff;
+  font-size: x-large;
+}
+/* light mmode */
+a:link,
+a:visited {
+  color: #10284e;
+}
+
+div.breadcrumbs {
+  background: #30caa0;
+  color: #10284e;
+}
+
+div.breadcrumbs a {
+  color: #333;
+}
+
+/* Dark mode */
+html[data-theme='dark'] a:link,
+html[data-theme='dark'] a:visited {
+  color: #e0e0e0;
+}
+
+.module h2,
+.module caption,
+.inline-group h2 {
+  background: #30caa0;
+}
+
+.button,
+input[type='submit'],
+input[type='button'],
+.submit-row input,
+a.button {
+  background: #10284e;
+}
+
+/* Auto + sistem pe dark */
+@media (prefers-color-scheme: dark) {
+  html[data-theme='auto'] a:link,
+  html[data-theme='auto'] a:visited {
+    color: #e0e0e0;
+  }
+}

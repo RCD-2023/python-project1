@@ -25,6 +25,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'pages.apps.PagesConfig',
+    'listings.apps.ListingsConfig',
+    'realtors.apps.RealtorsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -68,8 +70,12 @@ WSGI_APPLICATION = 'btre.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'btredb',
+        'USER': 'postgres',    
+        'PASSWORD': 'Ianuarie_2023!',
+        'HOST': 'localhost',
+        'PORT': '5433',   
     }
 }
 
@@ -109,7 +115,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_ROOT = BASE_DIR / 'static'
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [
      BASE_DIR / 'btre/static',
 ]
+
+# Media Folder Settings
+MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = '/media/'
