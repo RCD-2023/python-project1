@@ -28,17 +28,35 @@
           >
             <a class="nav-link" href="{% url 'about' %}">About</a>
           </li>
-          <li class="nav-item mr-3">
+          <li 
+          {% if request.resolver_match.url_name == 'listings' %}
+          class='nav-item active mr-3'
+          {% else  %}
+          class="nav-item mr-3"
+          {% endif  %}
+          >
             <a class="nav-link" href="{% url 'listings' %}">Featured Listings</a>
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item mr-3">
-            <a class="nav-link" href="register.html">
+          <li 
+          {% if request.resolver_match.url_name == 'register' %}
+          class='nav-item active mr-3'
+          {% else  %}
+          class="nav-item mr-3"
+          {% endif  %}
+          >
+            <a class="nav-link" href="{% url 'register' %}">
               <i class="fas fa-user-plus"></i> Register</a>
           </li>
-          <li class="nav-item mr-3">
-            <a class="nav-link" href="login.html">
+          <li 
+          {% if request.resolver_match.url_name == 'login' %}
+          class='nav-item active mr-3'
+          {% else  %}
+          class="nav-item mr-3"
+          {% endif  %}
+          >
+            <a class="nav-link" href="{% url 'login' %}">
               <i class="fas fa-sign-in-alt"></i>
               Login</a>
           </li>
