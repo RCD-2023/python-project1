@@ -26,6 +26,6 @@ class Listing(models.Model):
     photo_6 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
     is_published= models.BooleanField(default=True)
     list_date = models.DateTimeField(default=datetime.now, blank=True)
-    # definim fieldul care sa fie folosit in pagina admin
+    # definim fieldul care sa fie folosit in pagina admin si care va fi returnat in html la solicitare
     def __str__(self):
         return self.title
